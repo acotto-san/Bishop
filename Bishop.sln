@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Specflow", "Bishop.Specflow\Bishop.Specflow.csproj", "{573A4775-8664-47BC-96F4-8AEF6294975F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yTestFramework", "yTestFramework\yTestFramework.csproj", "{201D2E8A-6BA7-4334-91A6-35D20DFEC8D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EA4B2380-0268-45A2-866D-CCD2D01F1F72}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Screenplay", "Bishop.Screenplay\Bishop.Screenplay.csproj", "{CF0D1A36-B920-4811-9C3F-F4E29A6A6549}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Selenium", "Bishop.Selenium\Bishop.Selenium.csproj", "{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bishop.Playwright", "Bishop.Playwright\Bishop.Playwright.csproj", "{F870D41A-F21F-442F-9D5A-ADE043499171}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{573A4775-8664-47BC-96F4-8AEF6294975F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573A4775-8664-47BC-96F4-8AEF6294975F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573A4775-8664-47BC-96F4-8AEF6294975F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573A4775-8664-47BC-96F4-8AEF6294975F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201D2E8A-6BA7-4334-91A6-35D20DFEC8D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201D2E8A-6BA7-4334-91A6-35D20DFEC8D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201D2E8A-6BA7-4334-91A6-35D20DFEC8D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201D2E8A-6BA7-4334-91A6-35D20DFEC8D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0D1A36-B920-4811-9C3F-F4E29A6A6549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0D1A36-B920-4811-9C3F-F4E29A6A6549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0D1A36-B920-4811-9C3F-F4E29A6A6549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0D1A36-B920-4811-9C3F-F4E29A6A6549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F870D41A-F21F-442F-9D5A-ADE043499171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F870D41A-F21F-442F-9D5A-ADE043499171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F870D41A-F21F-442F-9D5A-ADE043499171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F870D41A-F21F-442F-9D5A-ADE043499171}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B15A8798-4017-4D4F-B4E7-7E2DB28FE2D3}
+	EndGlobalSection
+EndGlobal

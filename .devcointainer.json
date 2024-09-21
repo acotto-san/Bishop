@@ -1,0 +1,5 @@
+{
+  "name": "Playwright Testing",
+  "image": "mcr.microsoft.com/playwright/dotnet:v1.47.0-noble",
+  "forwardPorts": [9323]
+}
