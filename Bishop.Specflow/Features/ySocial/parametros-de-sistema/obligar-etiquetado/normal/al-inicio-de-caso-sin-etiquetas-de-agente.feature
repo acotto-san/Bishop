@@ -17,7 +17,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
 
         @tc:8787
         Escenario: Agente es obligado a etiquetar al realizar la primera finalizacion de modo chat de caso sin etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y un agente recibio la asignacion de un caso que aun no fue gestionado por un agente
             Y el caso tiene etiquetas pero ninguna puesta por un agente
             Cuando el agente responde el mensaje y finaliza la atencion del mensaje asignado
@@ -28,7 +28,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
 
         @tc:8788
         Escenario: Agente es obligado a etiquetar al responder el primer mensaje entrante al no tener etiquetas del agente
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y un agente recibio la asignacion del primer mensaje entrante de un caso
             Y el caso tiene etiquetas pero ninguna puesta por un agente
             Cuando intenta responder en modo normal el mensaje asignado
@@ -38,7 +38,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
         
         @tc:8789
         Escenario: Agente es obligado a etiquetar al descartar el primer mensaje entrante al no tener etiquetas del agente
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y un agente recibio la asignacion del primer mensaje entrante de un caso
             Y el caso tiene etiquetas pero ninguna puesta por un agente
             Cuando intenta descartar el mensaje asignado
@@ -48,7 +48,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
 
         @tc:8790
         Escenario: Agente es obligado a etiquetar al responder con un HSM el primer mensaje del caso sin etiquetas de agent
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y un agente recibio la asignacion del primer mensaje entrante de un caso
             Y el caso tiene etiquetas pero ninguna puesta por un agente
             Cuando intenta responder con una plantilla HSM
@@ -58,7 +58,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
         
         @tc:8791
         Esquema del escenario: Agente intenta cerrar el caso al ejecutar la accion y no se le obliga a etiquetar
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y a un agente le asignaron un caso compuesto solo del mensaje entrante
             Cuando intenta <accion> y cerrar caso
             Entonces no sera obligado a etiquetar
@@ -72,7 +72,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
 
         @tc:8792
         Esquema del escenario: Agente no es obligado a etiquetar al inicio porque el caso posee etiqueta de un agente
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y a un agente le asignaron un caso compuesto solo del mensaje entrante
             Y el caso posee una etiqueta de un agente
             Cuando intenta <accion> 
@@ -87,7 +87,7 @@ Característica: Obligar etiquetado en la primer interaccion cuando el caso no p
 
         @tc:8793
         Escenario: Agente no es obligado a etiquetar al inicio por no haber etiquetas en la cola
-            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "sin etiquetas de agente"
+            Dado que la funcionalidad de obligar etiquetado al inicio esta configurado en "si no tiene etiquetas de agente"
             Y a un agente le asignaron un caso compuesto solo del mensaje entrante
             Y la cola de donde proviene el caso no posee etiquetas asociadas
             Cuando intenta <accion> 

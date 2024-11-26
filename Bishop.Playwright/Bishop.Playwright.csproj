@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
+    <PackageReference Include="FluentAssertions" Version="6.12.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Microsoft.Playwright" Version="1.47.0" />
     <PackageReference Include="Microsoft.Playwright.NUnit" Version="1.47.0" />
@@ -20,11 +21,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="NUnit.Framework" />
+    <ProjectReference Include="..\Bishop.Common\Bishop.Common.csproj" />
+    <Reference Include="log4net">
+      <HintPath>..\Dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Yoizen.Common">
+      <HintPath>..\Dependencies\Yoizen.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Yoizen.Social.DAL">
+      <HintPath>..\Dependencies\Yoizen.Social.DAL.dll</HintPath>
+    </Reference>
+	<Reference Include="Yoizen.Social.DomainModel">
+		<HintPath>..\Dependencies\Yoizen.Social.DomainModel.dll</HintPath>
+	</Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Using Include="NUnit.Framework" />
   </ItemGroup>
 
 </Project>

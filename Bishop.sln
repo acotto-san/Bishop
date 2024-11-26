@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32929.385
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Specflow", "Bishop.Specflow\Bishop.Specflow.csproj", "{573A4775-8664-47BC-96F4-8AEF6294975F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93107F5B-6D17-4177-A6F4-5B280D354A24} = {93107F5B-6D17-4177-A6F4-5B280D354A24}
+		{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC} = {D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}
+		{F870D41A-F21F-442F-9D5A-ADE043499171} = {F870D41A-F21F-442F-9D5A-ADE043499171}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yTestFramework", "yTestFramework\yTestFramework.csproj", "{201D2E8A-6BA7-4334-91A6-35D20DFEC8D0}"
 EndProject
@@ -16,7 +21,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Screenplay", "Bishop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Selenium", "Bishop.Selenium\Bishop.Selenium.csproj", "{D6E8C17C-2EFA-49ED-9E01-E43D6C82F1EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bishop.Playwright", "Bishop.Playwright\Bishop.Playwright.csproj", "{F870D41A-F21F-442F-9D5A-ADE043499171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Playwright", "Bishop.Playwright\Bishop.Playwright.csproj", "{F870D41A-F21F-442F-9D5A-ADE043499171}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93107F5B-6D17-4177-A6F4-5B280D354A24} = {93107F5B-6D17-4177-A6F4-5B280D354A24}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bishop.Common", "Bishop.Common\Bishop.Common.csproj", "{93107F5B-6D17-4177-A6F4-5B280D354A24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +54,10 @@ Global
 		{F870D41A-F21F-442F-9D5A-ADE043499171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F870D41A-F21F-442F-9D5A-ADE043499171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F870D41A-F21F-442F-9D5A-ADE043499171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93107F5B-6D17-4177-A6F4-5B280D354A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93107F5B-6D17-4177-A6F4-5B280D354A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93107F5B-6D17-4177-A6F4-5B280D354A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93107F5B-6D17-4177-A6F4-5B280D354A24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

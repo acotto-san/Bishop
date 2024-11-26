@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace Bishop.Playwright.PageObjects
 {
-    public class BasePage
+    public abstract class BasePage
     {
         protected readonly IPage _page;
+
+        protected abstract string BaseUrl { get; }
+        protected abstract string Endpoint { get; }
+
+        public string FullUrl => $"{BaseUrl}{Endpoint}";
 
         public BasePage(IPage page)
         {

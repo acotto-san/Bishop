@@ -73,52 +73,58 @@ Característica: Configurar los canales Públicos en AXP
 		@tc:8258
 		Esquema del escenario: agente tiene asignado un público y se le asigna un nuevo entrante
 			Dada la web del agente AXP visualizando un caso iniciado por un mensaje público
-			Y la conversacion <estado respuesta> una respuesta del agente
+			Y la conversacion tiene una respuesta del agente
 			Cuando un nuevo mensaje entrante público ingrese
-			Entonces el mensaje quedará agregado al final de la conversación
-
-			Ejemplos:	
-				| estado respuesta |
-				| tiene            |
-				| no tiene         |
+			Entonces el mensaje nuevo creara un nuevo caso
 
 
-	Regla: Una asignación pública se puede convertir en privada
+	Regla: Las asignaciones públicas son separadas a las asignaciones privadas del mismo canal
 		
 		@tc:8259
 		Escenario: Luego de responder un mensaje público se asigna un privado
-			Dado que un mensaje publico y un privado fueron asignados a un agente
+			Dado que un mensaje publico y un privado de un mismo canal fueron asignados a un agente
 			Y el agente esta visualizando solo el público
 			Cuando responde el mensaje
 			Entonces se deshabilita el textarea
 			Y se agrega la respuesta al cuerpo de la conversacion
-			Y se actualiza la conversacion dejando en pantalla solo el mensaje entrante privado
+			Y queda el caso del mensaje privado para continuar en otra asignacion
 
 
-		@tc:8260
-		Esquema del escenario: Agente con 2 mensajes de diferentes vías responde al primer mensaje
-			Dado que a un agente de AXP se le asigna un mensaje <via primer mensaje> y uno <via segundo mensaje>
-			Y tiene en pantalla el primero de los mensajes
-			Cuando responde
-			Entonces la respuesta se enviara por la via <via primer mensaje>
+		#se dejan comentados los tcs 8260 y 8261 ya que se modificó el comportamiento
+		#antes si un usuario mandaba un mensaje por vía pública y via privada, el agente recibía primero el caso público y luego de responder se renderizaba 
+		#el mismo caso y se unificaba el privado. Así de forma viceversa.
+		#Ahora cada vía tiene su caso por separado.
+#		@tc:8260
+#		Esquema del escenario: Agente con 2 mensajes de diferentes vías responde al primer mensaje
+#			Dado que a un agente de AXP se le asigna un mensaje <via primer mensaje> y uno <via segundo mensaje>
+#			Y tiene en pantalla el primero de los mensajes
+#			Cuando responde
+#			Entonces la respuesta se enviara por la via <via primer mensaje>
+#
+#			Ejemplos: 
+#				| via primer mensaje | via segundo mensaje |
+#				| privado            | privada             |
+#				| publico            | privado             |
+#
+#		@tc:8261
+#		Esquema del escenario: Agente con 2 mensajes de diferentes vías responde al segundo mensaje
+#			Dado que a un agente de AXP se le asigna un mensaje <via primer mensaje> y uno <via segundo mensaje>
+#			Y respondio al primer mensaje
+#			Y paso a tener en pantalla al segundo mensaje
+#			Cuando responde 
+#			Entonces la respuesta se enviara por la via <via primer mensaje>
+#
+#			Ejemplos: 
+#				| via primer mensaje | via segundo mensaje |
+#				| privado            | publico             |
+#				| publico            | privado             |
 
-			Ejemplos: 
-				| via primer mensaje | via segundo mensaje |
-				| privado            | publico             |
-				| publico            | privado             |
-
-		@tc:8261
-		Esquema del escenario: Agente con 2 mensajes de diferentes vías responde al segundo mensaje
-			Dado que a un agente de AXP se le asigna un mensaje <via primer mensaje> y uno <via segundo mensaje>
-			Y respondio al primer mensaje
-			Y paso a tener en pantalla al segundo mensaje
-			Cuando responde 
-			Entonces la respuesta se enviara por la via <via primer mensaje>
-
-			Ejemplos: 
-				| via primer mensaje | via segundo mensaje |
-				| privado            | publico             |
-				| publico            | privado             |
+		@tc:9209
+		Escenario: un usuario envia un mensaje público y uno privado al mismo canal
+			Dado que un usuario envia un mensaje publico de facebook
+			Y el agente recibe el caso publico en su casilla
+			Cuando el mismo usuario envia un mensaje privado de messenger al mismo servicio de fb
+			Entonces el agente debera recibir un caso nuevo privado
 
 
 	Regla: En el widget existe una indicación de canal público o privado

@@ -99,7 +99,6 @@ Para evitar que los agentes se queden con conversaciones por mucho tiempo
 			Y no hay otro mensaje en la cola
 			Cuando el timer se agote
 			Entonces el mensaje debera ser devuelto a la cola 
-
 		#nuevo
 		@tc:6507
 		Escenario: Timer del agente vence y le muestra un popup al agente
@@ -243,9 +242,9 @@ Para evitar que los agentes se queden con conversaciones por mucho tiempo
 			Entonces al timer activo continuara quedandole 1 minuto para vencerse
 
 			Ejemplos: 
-				| accion |
-				| encola |
-				| asigna |
+				| accion          |
+				| encola          |
+				| asigna y agrupa |
 
 		@tc:6513
 		Escenario: Timer del usuario en ejecucion no se modifica por nuevos salientes del agente

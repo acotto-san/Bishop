@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bishop.Playwright.PageObjects.Supervisor.Configurations
 {
-    public class AgentsListPage : BasePage
+    public class AgentsListPage : BaseWebComponent
     {
         public AgentsListPage(IPage page) : base(page)
         {

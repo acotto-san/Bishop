@@ -1,14 +1,8 @@
 ﻿using Microsoft.Playwright;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Bishop.Playwright.Helpers.RTAgentsPageMock;
 
 namespace Bishop.Playwright.PageObjects.Supervisor.Configurations
 {
-    public class AgentDataTab : BasePage
+    public class AgentDataTab : BaseWebComponent
     {
         public AgentDataTab(IPage page) : base(page)
         {

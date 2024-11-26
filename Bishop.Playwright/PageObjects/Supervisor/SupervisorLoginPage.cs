@@ -1,4 +1,5 @@
-﻿using Microsoft.Playwright;
+﻿using Bishop.Common;
+using Microsoft.Playwright;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Bishop.Playwright.PageObjects.Supervisor
     public class SupervisorLoginPage
     {
         private readonly IPage _page;
-        private readonly string _url = "https://qa.ysocial.net/Test/Login.aspx?Redirect=~/Default.aspx";
+        private readonly string _urlPath = "/Login.aspx";
 
         public SupervisorLoginPage(IPage page)
         {
@@ -23,7 +24,7 @@ namespace Bishop.Playwright.PageObjects.Supervisor
 
         async public Task LogInWithCredentials(string username, string password)
         {
-            await Navigate();
+            await GotToAsync();
             await CompleteFormWithCredentials(username, password);
             await _submitButton.ClickAsync();
         }
@@ -36,9 +37,9 @@ namespace Bishop.Playwright.PageObjects.Supervisor
             await _passwordField.FillAsync(password);
         }
 
-        async public Task Navigate()
+        async public Task GotToAsync()
         {
-            await _page.GotoAsync(_url);
+            await _page.GotoAsync(TestConfiguration.SocialBaseUrl+_urlPath);
         }
 
     }

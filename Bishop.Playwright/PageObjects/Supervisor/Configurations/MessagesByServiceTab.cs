@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bishop.Playwright.PageObjects.Supervisor.Configurations
 {
-    public class MessagesByServiceTab : BasePage
+    public class MessagesByServiceTab : BaseWebComponent
     {
         public MessagesByServiceTab(IPage page) : base(page)
         {

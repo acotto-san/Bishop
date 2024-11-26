@@ -70,8 +70,8 @@ Característica: Obligar al agente a aplicar una etiqueta importante al momento 
                 | off              | descartar |
 
         @tc:6080
-        Escenario: Se le obliga al agente a etiquetar un caso de chat que tuvo una etiqueta importante y luego fue quitada
-            Dado que se encuentra habilitado el feature "Etiquetado importante" con la opcion "Si no tiene ninguna etiqueta"            
+        Escenario: Se le obliga al agente a etiquetar un caso que tuvo una etiqueta importante y luego fue quitada
+            Dado que el etiquetado importante al cerrar se encuentra habilitado
             Y a un agente se le asigna un caso que tuvo una etiqueta importante que luego le fue quitada
             Cuando el agente intenta cerrar el caso
             Entonces aparecera el modal para aplicar etiquetas al caso
@@ -87,7 +87,6 @@ Característica: Obligar al agente a aplicar una etiqueta importante al momento 
                 | si                       | no                        | modo chat:<estado modo chat> |
             Cuando el agente intenta cerrar el caso mediante la accion <accion>
             Entonces no aparecera el modal para aplicar etiquetas al caso
-            
 
                 Ejemplos: 
                        | estado modo chat | accion             |
@@ -102,7 +101,6 @@ Característica: Obligar al agente a aplicar una etiqueta importante al momento 
             Y a un agente se le asigna un caso con las siguientes propiedades:
                     | tiene etiquetas normales | tiene etiqueta importante | etiquetado por | config del servicio          |
                     | si                       | si                        | <agente>       | modo chat:<estado modo chat> |
-        
             Cuando el agente intenta cerrar el caso mediante la accion <accion>
             Entonces no debera aparecer el modal para aplicar etiquetas
 
@@ -115,7 +113,7 @@ Característica: Obligar al agente a aplicar una etiqueta importante al momento 
                     | otro agente | on               | descartar y cerrar |
                     | sistema     | on               | descartar y cerrar |
 
-                Ejemplos: modo chat deshabilitado
+               Ejemplos: modo chat deshabilitado
                    | agente      | estado modo chat | accion    |
                    | supervisor  | off              | responder |
                    | otro agente | off              | responder |
@@ -123,47 +121,3 @@ Característica: Obligar al agente a aplicar una etiqueta importante al momento 
                    | supervisor  | off              | descartar |
                    | otro agente | off              | descartar |
                    | sistema     | off              | descartar |
-
-    Regla: el agente es obligado a etiquetar cuando el caso no tiene una etiqueta de un agente colocada
-
-        @tc:
-        Escenario: se obliga a etiqueta un caso con etiqueta previa que no es de agente
-            Dado que se encuentra habilitado el feature "Etiquetado obligatorio al cierre" con la opcion "Si no tiene etiqueta de agente"
-            Y a un agente se le asigna un caso con las siguientes propiedades:
-                    | tiene etiquetas normales | tiene etiqueta importante | etiquetado por | config del servicio          |
-                    | si                       | si                        | <agente>       | modo chat:<estado modo chat> |
-            Cuando el agente intenta cerrar el caso mediante la accion <accion>
-            Entonces debera aparecer el modal para aplicar etiquetas
-
-                Ejemplos: modo chat habilitado
-                    | agente      | estado modo chat | accion             |
-                    | supervisor  | on               | finalizar y cerrar |
-                    | sistema     | on               | finalizar y cerrar |
-                    | supervisor  | on               | descartar y cerrar |
-                    | sistema     | on               | descartar y cerrar |
-
-                Ejemplos: modo chat deshabilitado
-                   | agente      | estado modo chat | accion    |
-                   | supervisor  | off              | responder |
-                   | sistema     | off              | responder |
-                   | supervisor  | off              | descartar |
-                   | sistema     | off              | descartar |
-
-            #falta confirmar que el supervisor sea diferente al agente, o por ser "humano" se considera como etiqueta de agente
-
-
-    @tc:
-    Escenario: no se obliga a etiquetar un caso con etiqueta previa de agente
-        Dado que se encuentra habilitado el feature "Etiquetado obligatorio al cierre" con la opcion "Si no tiene etiqueta de agente"
-        Y a un agente se le asigna un caso con las siguientes propiedades:
-                    | tiene etiquetas normales | tiene etiqueta importante | etiquetado por | config del servicio          |
-                    | si                       | si                        | agente         | modo chat:<estado modo chat> |
-        Cuando otro agente intenta cerrar el caso 
-        Entonces debera no aparecer el modal para aplicar etiquetas
-
-            Ejemplos: 
-            | estado modo chat |
-            | on               |
-            | off              |
-
-              #falta confirmar que el supervisor sea diferente al agente, o por ser "humano" se considera como etiqueta de agente

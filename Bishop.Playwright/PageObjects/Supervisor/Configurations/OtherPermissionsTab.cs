@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bishop.Playwright.PageObjects.Supervisor.Configurations
 {
-    public class OtherPermissionsTab : BasePage
+    public class OtherPermissionsTab : BaseWebComponent
     {
         public OtherPermissionsTab(IPage page) : base(page)
         {

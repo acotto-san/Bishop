@@ -8,7 +8,7 @@ namespace Bishop.Playwright.UnitTests
 {
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]
-    public class Tests : PageTest
+    public class CreateAgent : PageTest
     {
         private IBrowser _browser;
         private IPage _page;

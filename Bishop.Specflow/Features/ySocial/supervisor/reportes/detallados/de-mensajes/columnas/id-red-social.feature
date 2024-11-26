@@ -1,3 +1,4 @@
+#language:es
 Característica: ID de cuenta de red social
 
     Como administrador

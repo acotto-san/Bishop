@@ -14,7 +14,7 @@ Característica:Obligar cuando agente intenta descartar mensaje y caso no posee 
 
         @tc:8783
         Esquema del escenario: Agente intenta descartar un mensaje de un caso sin etiquetas del agente y se le obliga a etiquetar para continuar
-            Dado que la funcionalidad de obligar etiquetado al descartar esta configurado en "sin etiquetas de agente""
+            Dado que la funcionalidad de obligar etiquetado al descartar esta configurado en "si no tiene etiquetas de agente""
             Y a un agente le asignaron un caso con <cantidad-etiquetas> etiquetas
             Y ninguna etiqueta aplicada por agente
             Cuando intente descartar el mensaje
@@ -27,7 +27,7 @@ Característica:Obligar cuando agente intenta descartar mensaje y caso no posee 
         
         @tc:8784
         Escenario: Agente intenta descartar un mensaje y no es obligado a etiquetar porque el caso ya posee etiquetas de un agente
-            Dado que la funcionalidad de obligar etiquetado en descarte esta configurado en "sin etiquetas de agente""
+            Dado que la funcionalidad de obligar etiquetado en descarte esta configurado en "si no tiene etiquetas de agente""
             Y a un agente le asignaron un caso con 1 etiqueta provista por un agente
             Cuando intenta descartar el mensaje
             Entonces el mensaje se descartara sin haberle obligado al agente a etiquetar
@@ -36,7 +36,7 @@ Característica:Obligar cuando agente intenta descartar mensaje y caso no posee 
 
         @tc:8785
         Escenario: el etiquetado obligatorio no ocurre porque la cola de donde proviene el caso no posee etiquetas
-            Dado que la funcionalidad de obligar etiquetado en descarte esta configurado en "sin etiquetas de agente""
+            Dado que la funcionalidad de obligar etiquetado en descarte esta configurado en "si no tiene etiquetas de agente""
             Y a un agente le asignaron un caso con 0 etiquetas provistas por un agente
             Y el caso proviene de una cola que no posee etiquetas
             Cuando intente descartar el mensaje

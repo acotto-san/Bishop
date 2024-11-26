@@ -1,72 +1,63 @@
 ﻿#language: es
 @us:7984
-Característica: Obligar el etiquetado al cerrar un caso sin etiquetas de un agente
+Característica: Obligación de etiquetar al cerrar un caso sin etiquetas de un agente
 
+	Regla: Configuración del etiquetado obligatorio en Parámetros de sistema
 
-    Regla: la configuracion del etiquetado obligatorio se realiza en Parametros de sistema
+		@tc:8774
+		Escenario: Habilitar etiquetado obligatorio al cerrar un caso sin etiquetas de agentes
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar casos sin etiquetas de agentes está deshabilitada
+			Cuando un supervisor accede a los parámetros de sistema
+			Entonces podrá habilitar la opción para que aplique globalmente a todos los agentes
 
-        @tc:8774
-        Escenario: supervisor habilita el etiquetado obligatorio al cerrar caso sin etiquetas de agentes
-            Dado se encuentra deshabilitada la funcionalidad de obligar a los agentes a etiquetar al cerrar casos sin etiquetas de agentes
-            Cuando un supervisor ingresa a parametros de sistema
-            Entonces ahi podra habilitar para que el feature aplique globalmente a todos los agentes
+	Regla de negocio: El etiquetado obligatorio aplica a casos asignados
 
-    Regla de negocio: El etiquetado obligatorio aplica a casos asignados
-        
-        @tc:8775
-        Esquema del escenario: Agente es obligado a etiquetar al cerrar un caso asignado sin etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Y a un agente le asignaron un caso con etiquetas pero ninguna provista por un agente
-            Cuando intenta <accion> 
-            Entonces para continuar sera obligado a aplicar una etiqueta normal
+		@tc:8775
+		Esquema del escenario: El agente debe etiquetar al cerrar un caso asignado sin etiquetas propias
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar está configurada en "si no tiene etiquetas de agente"
+			Y a un agente se le asigna un caso con etiquetas, pero ninguna proporcionada por un agente
+			Cuando el agente intenta cerrar el caso mediante <acción>
+			Entonces deberá aplicar al menos una etiqueta normal para continuar
 
-            Ejemplos: 
-                | accion                      |
-                | finalizar (modo chat)       |
-                | responder (modo normal)     |
-                | descartar                   |
-                | responder con plantilla HSM |
-            
-    Regla de negocio: Se tiene en cuenta los casos que se cierran desde Salientes
+			Ejemplos:
+				| acción                      |
+				| finalizar (modo chat)       |
+				| responder (modo normal)     |
+				| descartar                   |
+				| responder con plantilla HSM |
 
-        @tc:8776
-        Escenario: Agente es obligado a etiquetar al intentar cerrar desde Salientes un caso sin etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Cuando el agente desde Salientes intenta cerrar un caso con etiquetas pero ninguna provista por agente
-            Entonces para continuar sera obligado a aplicar una etiqueta normal
+	Regla de negocio: Aplicación del etiquetado obligatorio en casos cerrados desde "Salientes"
 
-    Regla de negocio: Se tiene en cuenta los casos que se cierran desde Buscar Casos
-        
-        @tc:8777
-        Escenario: Agente es obligado a etiquetar al intentar cerrar desde Buscar Casos un caso sin etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Cuando el agente desde Buscar Casos intenta cerrar un caso con etiquetas pero ninguna provista por agente
-            Entonces para continuar sera obligado a aplicar una etiqueta normal
+		@tc:8776
+		Escenario: El agente debe etiquetar al cerrar un caso desde "Salientes" sin etiquetas propias
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar está configurada en "si no tiene etiquetas de agente"
+			Cuando el agente intenta cerrar un caso desde "Salientes" con etiquetas, pero ninguna proporcionada por un agente
+			Entonces deberá aplicar al menos una etiqueta para continuar
 
-    Regla de negocio: En ocaciones se omitira el etiquetado obligatorio
+	Regla de negocio: Casos exentos de etiquetado obligatorio
 
-        @tc:8778
-        Escenario: Agente queda excento de etiquetar al cerrar caso asignado por tener etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Cuando un agente intenta cerrar un caso asignado que posee una etiqueta provista por un agente
-            Entonces no sera obligado a etiquetar
-        
-        @tc:8779
-        Escenario: Agente queda excento de etiquetar al cerrar caso desde Salientes por tener etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Cuando un agente intenta cerrar desde Salientes un caso que posee una etiqueta provista por un agente
-            Entonces no sera obligado a etiquetar
+		@tc:8777
+		Escenario: El agente está exento de etiquetar si el caso ya tiene una etiqueta del agente
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar está configurada en "si no tiene etiquetas de agente"
+			Cuando un agente intenta cerrar un caso asignado que posee una etiqueta proporcionada por el agente
+			Entonces no estará obligado a etiquetar
 
-        @tc:8780
-        Escenario: Agente queda excento de etiquetar al cerrar caso desde Buscar Casos por tener etiquetas de agente
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Cuando un agente intenta cerrar desde Buscar Casos un caso que posee una etiqueta provista por un agente
-            Entonces no sera obligado a etiquetar
+		@tc:8778
+		Escenario: El agente está exento de etiquetar al cerrar un caso desde "Salientes" si tiene etiquetas del agente
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar está configurada en "si no tiene etiquetas de agente"
+			Cuando un agente intenta cerrar un caso desde "Salientes" que posee una etiqueta proporcionada por el agente
+			Entonces no estará obligado a etiquetar
 
-        @tc:8781
-        Escenario: Agente queda excento de etiquetar al cerrar caso asignado por no haber etiquetas disponibles
-            Dado que la funcionalidad de obligar etiquetado al cerrar esta configurado en "sin etiquetas de agente"
-            Y a un agente le asignaron un caso con etiquetas pero ninguna provista por un agente
-            Y la cola de donde proviene el caso no posee etiquetas asignadas
-            Cuando el agente intenta cerrar el caso
-            Entonces no sera obligado a etiquetar                                                                                                                                                                                                                                                     
+		@tc:8780
+		Escenario: El agente está exento de etiquetar al cerrar un caso desde "Buscar Casos" si tiene etiquetas del agente
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar está configurada en "si no tiene etiquetas de agente"
+			Cuando un agente intenta cerrar un caso desde "Buscar Casos" que posee una etiqueta proporcionada por el agente
+			Entonces no estará obligado a etiquetar
+
+		@tc:8781
+		Escenario: El agente está exento de etiquetar al cerrar un caso si no hay etiquetas disponibles
+			Dado que la funcionalidad de etiquetado obligatorio al cerrar está configurada en "si no tiene etiquetas de agente"
+			Y a un agente se le asigna un caso con etiquetas, pero ninguna proporcionada por el agente
+			Y la cola de donde proviene el caso no tiene etiquetas asignadas
+			Cuando el agente intenta cerrar el caso
+			Entonces no estará obligado a etiquetar

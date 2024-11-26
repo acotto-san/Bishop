@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bishop.Playwright.PageObjects.Supervisor.Configurations
 {
-    public class IncomingMessagesTab : BasePage
+    public class IncomingMessagesTab : BaseWebComponent
     {
         public IncomingMessagesTab(IPage page) : base(page)
         {

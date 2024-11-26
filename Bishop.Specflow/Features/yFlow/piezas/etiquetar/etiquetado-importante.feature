@@ -1,4 +1,5 @@
-﻿Característica: yFlow - Etiqueta Importante
+﻿#language:es
+Característica: yFlow - Etiqueta Importante
     Como implementador de chatbots
     Quiero tener una pieza que aplique una etiqueta importante
     Para que todo caso que haya ejecutado la pieza tenga como importante la etiqueta configurada en la misma

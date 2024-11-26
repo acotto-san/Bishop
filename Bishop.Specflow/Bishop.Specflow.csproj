@@ -12,31 +12,42 @@
     <Compile Remove="Features\usuario-escribe\**" />
     <Compile Remove="Features\yFlow\importar-tablas\**" />
     <Compile Remove="Features\ySocial\agente-web\reapertura-de-casos\**" />
+    <Compile Remove="Features\ySocial\colas\prioridad-de-encolamiento\**" />
+    <Compile Remove="Features\ySocial\encuestas\condiciones-no-envio\**" />
     <Compile Remove="Features\ySocial\HSM\envio-masivo\sin-caso\**" />
+    <Compile Remove="Features\ySocial\supervisor\reportes\tiempo-real\de-agentes\columnas\**" />
     <Compile Remove="Support\**" />
     <EmbeddedResource Remove="Drivers\**" />
     <EmbeddedResource Remove="Features\usuario-escribe\**" />
     <EmbeddedResource Remove="Features\yFlow\importar-tablas\**" />
     <EmbeddedResource Remove="Features\ySocial\agente-web\reapertura-de-casos\**" />
+    <EmbeddedResource Remove="Features\ySocial\colas\prioridad-de-encolamiento\**" />
+    <EmbeddedResource Remove="Features\ySocial\encuestas\condiciones-no-envio\**" />
     <EmbeddedResource Remove="Features\ySocial\HSM\envio-masivo\sin-caso\**" />
+    <EmbeddedResource Remove="Features\ySocial\supervisor\reportes\tiempo-real\de-agentes\columnas\**" />
     <EmbeddedResource Remove="Support\**" />
-    <None Remove="Drivers\**" />
-    <None Remove="Features\usuario-escribe\**" />
-    <None Remove="Features\yFlow\importar-tablas\**" />
     <None Remove="Features\ySocial\agente-web\reapertura-de-casos\**" />
+    <None Remove="Features\ySocial\colas\prioridad-de-encolamiento\**" />
+    <None Remove="Features\ySocial\encuestas\condiciones-no-envio\**" />
     <None Remove="Features\ySocial\HSM\envio-masivo\sin-caso\**" />
-    <None Remove="Support\**" />
+    <None Remove="Features\ySocial\supervisor\reportes\tiempo-real\de-agentes\columnas\**" />
     <SpecFlowFeatureFiles Remove="Drivers\**" />
     <SpecFlowFeatureFiles Remove="Features\usuario-escribe\**" />
     <SpecFlowFeatureFiles Remove="Features\yFlow\importar-tablas\**" />
     <SpecFlowFeatureFiles Remove="Features\ySocial\agente-web\reapertura-de-casos\**" />
+    <SpecFlowFeatureFiles Remove="Features\ySocial\colas\prioridad-de-encolamiento\**" />
+    <SpecFlowFeatureFiles Remove="Features\ySocial\encuestas\condiciones-no-envio\**" />
     <SpecFlowFeatureFiles Remove="Features\ySocial\HSM\envio-masivo\sin-caso\**" />
+    <SpecFlowFeatureFiles Remove="Features\ySocial\supervisor\reportes\tiempo-real\de-agentes\columnas\**" />
     <SpecFlowFeatureFiles Remove="Support\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Drivers\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\usuario-escribe\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\yFlow\importar-tablas\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ySocial\agente-web\reapertura-de-casos\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\ySocial\colas\prioridad-de-encolamiento\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\ySocial\encuestas\condiciones-no-envio\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\ySocial\HSM\envio-masivo\sin-caso\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\ySocial\supervisor\reportes\tiempo-real\de-agentes\columnas\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Support\**" />
   </ItemGroup>
 
@@ -49,14 +60,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
     <PackageReference Include="SolidToken.SpecFlow.DependencyInjection" Version="3.9.3" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
-    <PackageReference Include="FluentAssertions" Version="6.12.0" />
-	<PackageReference Include="Selenium.Support" Version="4.9.0" />
-	<PackageReference Include="Selenium.WebDriver" Version="4.12.4" />
 	<PackageReference Include="SpecFlow.xUnit" Version="3.9.74" />
-	<PackageReference Include="WebDriverManager" Version="2.17.1" />
 	<PackageReference Include="xunit" Version="2.9.0" />
 	<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
 	  <PrivateAssets>all</PrivateAssets>
@@ -65,6 +73,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\AXP\configuracion\parametros-de-sistema\" />
     <Folder Include="Features\yFlow\bloques\" />
     <Folder Include="Features\yFlow\dashboard\" />
     <Folder Include="Features\yFlow\historial-de-flujo\" />
@@ -76,11 +85,11 @@
     <Folder Include="Features\yFlow\piezas\ejecucion-de-codigo-javascript\" />
     <Folder Include="Features\ySocial\agente-web\mensajes-asignados\responder\" />
     <Folder Include="Features\ySocial\agente-web\salientes\mail\" />
-    <Folder Include="Features\ySocial\colas\prioridad-de-encolamiento\" />
     <Folder Include="Features\ySocial\encuestas\condiciones-de-envio\" />
-    <Folder Include="Features\ySocial\encuestas\condiciones-no-envio\" />
+    <Folder Include="Features\ySocial\encuestas\configuracion\" />
     <Folder Include="Features\ySocial\encuestas\de-terceros\campos-query-string\" />
     <Folder Include="Features\ySocial\filtros\responder-automaticamente\" />
+    <Folder Include="Features\ySocial\HSM\dashboard\contadores-comunes\efectividad-entrega\" />
     <Folder Include="Features\ySocial\HSM\dashboard\contadores-comunes\tareas-enviadas\" />
     <Folder Include="Features\ySocial\HSM\dashboard\vista-con-caso\" />
     <Folder Include="Features\ySocial\HSM\dashboard\vista-sin-caso\" />
@@ -90,13 +99,17 @@
     <Folder Include="Features\ySocial\servicios\canal-instagram\" />
     <Folder Include="Features\ySocial\supervisor\reportes\consolidados\consolidado-de-agentes\" />
     <Folder Include="Features\ySocial\supervisor\reportes\programados\" />
+    <Folder Include="Features\ySocial\supervisor\reportes\tiempo-real\de-agentes\filtros\" />
     <Folder Include="Features\ySocial\supervisor\reportes\tiempo-real\de-servicios\" />
     <Folder Include="Features\ySocial\supervisor\seccion-supervisor\ajustes\carga-masiva-perfiles\metodo-de-carga\" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <ProjectReference Include="..\Bishop.Common\Bishop.Common.csproj" />
+    <ProjectReference Include="..\Bishop.Playwright\Bishop.Playwright.csproj" />
     <ProjectReference Include="..\Bishop.Screenplay\Bishop.Screenplay.csproj" />
+    <ProjectReference Include="..\Bishop.Selenium\Bishop.Selenium.csproj" />
     <ProjectReference Include="..\yTestFramework\yTestFramework.csproj" />
   </ItemGroup>
 
@@ -119,7 +132,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.json">
+    <None Update="appsettings2.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -155,4 +168,10 @@
     </SpecFlowFeatureFiles>
   </ItemGroup>
 
+
+  <ItemGroup>
+	<Reference Include="Yoizen.Social.DomainModel">
+		<HintPath>..\Dependencies\Yoizen.Social.DomainModel.dll</HintPath>
+	</Reference>
+  </ItemGroup>
 </Project>

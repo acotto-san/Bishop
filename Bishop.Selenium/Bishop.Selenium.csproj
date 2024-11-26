@@ -29,4 +29,10 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
 
+  <ItemGroup>
+	<Reference Include="Yoizen.Social.DomainModel">
+      <HintPath>..\Dependencies\Yoizen.Social.DomainModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
