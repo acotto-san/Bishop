@@ -9,25 +9,49 @@ using Yoizen.Social.DomainModel;
 
 namespace Bishop.Playwright.UnitTests
 {
-    public class AgentLogInTests : PageTest
+    public class AgentsLogInTests : PageTest
     {
         private IPlaywright _playwright;
         private IBrowser _browser;
         private IPage _page;
-        public Agent _agent = new Agent
-        {
-            ID = 123,
-            UserName = "agyoizen",
-            Password = "Yoizen2020!"
-        };
+
+        // Lista de agentes para el test
+        public List<Agent> _agents;
 
         [SetUp]
         public async Task Setup()
         {
             _playwright = await Microsoft.Playwright.Playwright.CreateAsync();
             _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
+            _agents = YoizenAgentDAO.GetAListOfAgentsAndCredentialsFromCsv(TestConfiguration.AgentsCsv);
         }
 
+
+        [Test]
+        public async Task KeepAgentsLoggedUpTo10Minutes()
+        {
+
+            await MultipleLogin.OfAgents(_browser, _agents);
+
+            Thread.Sleep(TimeSpan.FromSeconds(600));
+        }
+
+        [Test]
+        public async Task KeepOneAgentLoggedUpTo5Minutes()
+        {
+            _page = await _browser.NewPageAsync();
+            Agent agent = YoizenAgentDAO.GetOneHardcoded();
+            await LogIn.AsAgent(_page, agent);
+            
+            Thread.Sleep(TimeSpan.FromSeconds(300));
+        }
+
+        [Test]
+        public async Task LogInMultipleAgents()
+        {
+
+            await MultipleLogin.OfAgents(_browser, _agents);
+        }
 
         // Prueba parametrizada para loguear a varios agentes
         [Test]
@@ -55,8 +79,10 @@ namespace Bishop.Playwright.UnitTests
         [TearDown]
         public async Task TearDown()
         {
-
-            await LogOut.AgentByEndpoint(_agent.ID);
+            foreach (Agent agent in _agents)
+            {
+                await LogOut.AgentByEndpoint(agent.ID);
+            }
             await _browser.CloseAsync();
             _playwright.Dispose();
         }

@@ -2,7 +2,6 @@
 using Bishop.Common.Stubs;
 using Bishop.Playwright.Actions;
 using Microsoft.Playwright;
-using System.Diagnostics;
 using Yoizen.Social.DomainModel;
 
 namespace Bishop.Playwright.UnitTests
